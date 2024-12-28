@@ -16,15 +16,15 @@ class Linkedlist:
         self.__head=None
         self.__tail=None
     def length(self):
-        length=0
+        len=0
         if(self.__head==None):
-            return length
+            return len
         else:
             lastnode=self.__head
             while lastnode is not None:
-                length+=1
+                len+=1
                 lastnode=lastnode.get_next()
-            return length
+            return len
     def addNodeLast(self,data):
         newnode=Node(data)
         if(self.__head is None):
@@ -38,9 +38,9 @@ class Linkedlist:
         if(position == 0):
             self.addNodeFirst(data)
             return
-        elif (position == self.length() - 1):
+        elif (position == self.() - 1):
             self.addNodeLast(data)
-        elif(position < 0 or position > self.length() - 1):
+        elif(position < 0 or position > self.() - 1):
             print("Invalid Position")
             return
         lastnode = self.__head
@@ -73,13 +73,13 @@ class Linkedlist:
                 lastnode=lastnode.get_next()
             prevnode.set_next(None)
     def deleteNodeAt(self,position):
-        if(position<0 or position>self.length()-1):
+        if(position<0 or position>self.()-1):
             print("Invalid Position")
             return
         elif(position==0):
             self.deleteNodeFirst()
             return
-        elif(position==self.length()):
+        elif(position==self.()):
             self.deleteNodeLast()
             return
         lastnode=self.__head
@@ -194,6 +194,6 @@ l1.addNodeAt(4,10)
 l1.displayLinkedList()
 l1.sum_of_even_data()
 l1.sum_of_odd_data()
-print(l1.length())
+print(l1.())
 l1.deleteNodeAt(2)
 l1.displayLinkedList()
