@@ -27,19 +27,20 @@ class BinarySearchTree:
                 else:
                     self.insert(key, current.right)
 
-    # Search for a node
-    def search(self, key, current=None):
-        if current is None:
-            current = self.root
-
-        while current is not None:
-            if current.key == key:
-                return current
-            elif key < current.key:
-                current = current.left
-            else:
-                current = current.right
-        return None
+    def search(self, key):   
+        return self._search_recursive(self.root, key)  
+  
+    def _search_recursive(self, current_node, key):  
+        if current_node is None:  
+            print(f"Key {key} not found.")  
+            return False  
+        if key == current_node.key:  
+            print(f"Key {key} found.")  
+            return True  
+        elif key < current_node.key:  
+            return self._search_recursive(current_node.left, key)  
+        else:  
+            return self._search_recursive(current_node.right, key)
 
     # Delete a node
     def delete(self, key, current=None):
@@ -140,7 +141,7 @@ if __name__ == "__main__":
     bst.insert(60)
     bst.insert(80)
 
-    print("BFS:", bst.bfs())
+    print("Level Order:", bst.bfs())
     print("In-Order:", bst.inorder())
     print("Pre-Order:", bst.preorder())
     print("Post-Order:", bst.postorder())
