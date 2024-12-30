@@ -75,21 +75,21 @@ Python 3.x: Ensure you have Python installed on your system.
 # Installation
 1. Clone the Repository 
 
-* Use Git to clone the repository to your local machine: 
-[https://github.com/Gokulapps/Data-Structures-and-Algorithms.git](url)
+   * Use Git to clone the repository to your local machine: <br/>
+   [https://github.com/Gokulapps/Data-Structures-and-Algorithms.git](url)
  
 3. Navigate to the Directory 
 
-* cd DataStructuresImplementation 
+   * cd DataStructuresImplementation 
  
 3. (Optional) Create a Virtual Environment 
 
-* Set up a virtual environment to manage dependencies (if any): 
-* python3 -m venv venv  
-* source venv/bin/activate  # On Windows: venv\Scripts\activate  
+   * Set up a virtual environment to manage dependencies (if any): 
+   * python3 -m venv venv  
+   * source venv/bin/activate  # On Windows: venv\Scripts\activate  
  
 4. Install Dependencies 
-* There are no external dependencies required as the implementations use Python's standard libraries. 
+   * There are no external dependencies required as the implementations use Python's standard libraries. 
 
 # Usage
 Each Python file contains classes and methods that implement the respective data structures. You can import these classes into your scripts or interact with them directly. <br/>
