@@ -73,23 +73,23 @@ Description: Implements a B⁺-Tree, optimized for systems that read and write l
 Python 3.x: Ensure you have Python installed on your system.
 
 # Installation
-1. Clone the Repository <br/>
+1. Clone the Repository 
 
 Use Git to clone the repository to your local machine: <br/>
 [https://github.com/Gokulapps/Data-Structures-and-Algorithms.git](url)
  
-3. Navigate to the Directory <br/>
+3. Navigate to the Directory 
 
-cd DataStructuresImplementation  <br/>
+cd DataStructuresImplementation 
  
-3. (Optional) Create a Virtual Environment <br/>
+3. (Optional) Create a Virtual Environment 
 
-Set up a virtual environment to manage dependencies (if any): <br/>
-python3 -m venv venv  <br/>
-source venv/bin/activate  # On Windows: venv\Scripts\activate  <br/>
+Set up a virtual environment to manage dependencies (if any): 
+python3 -m venv venv  
+source venv/bin/activate  # On Windows: venv\Scripts\activate  
  
-4. Install Dependencies <br/>
-There are no external dependencies required as the implementations use Python's standard libraries. <br/>
+4. Install Dependencies 
+There are no external dependencies required as the implementations use Python's standard libraries. 
 
 # Usage
 Each Python file contains classes and methods that implement the respective data structures. You can import these classes into your scripts or interact with them directly. <br/>
@@ -133,7 +133,9 @@ Is stack empty? False <br/>
 Note: Replace the print statements with appropriate outputs based on your implementation. <br/>
 
 # Contact
+
+Author - Gokul A <br/>
  
-Gokul A - gokulapps@gmail.com <br/>
+Email Id - gokulapps@gmail.com <br/>
 
 Project Link: [https://github.com/Gokulapps/Data-Structures-and-Algorithms](url) <br/>
