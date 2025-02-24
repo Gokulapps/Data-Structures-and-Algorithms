@@ -12,7 +12,7 @@ def palindromicString(word):
     longestPalindrome = ""
     palindromeLen = 0
     for i in range(word_length):
-        left, right = i, i-
+        left, right = i, i
         longestPalindrome, palindromeLen = identifyPalindrome(word, word_length, left, right, longestPalindrome, palindromeLen)
         left, right = i, i+1
         longestPalindrome, palindromeLen = identifyPalindrome(word, word_length, left, right, longestPalindrome, palindromeLen)
