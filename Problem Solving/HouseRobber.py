@@ -9,5 +9,5 @@ def rob(houses):
     return rob2 
     
 houses = [1, 4, 5, 2, 1, 6]
-max_amount = rob(houses)
+max_amount = max(houses[0], rob(houses[1:]), rob(houses[:-1]))
 print('The Maximum Amount that can be robbed is: ', max_amount)
