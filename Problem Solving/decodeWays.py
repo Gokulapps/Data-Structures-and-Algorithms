@@ -28,8 +28,28 @@ def decode(string):
 string = '12134'
 print(decode(string))
 
+# Algorithm 2 - Bottom up Dynamic Programming Approach using dp array
+def decodeWays(string):  
+    if not string or string[0] == '0':  
+        return 0  
+      
+    length = len(string)  
+    dp = [0] * (length + 1)  
+    dp[0] = 1  
+    dp[1] = 1  
+      
+    for i in range(2, length + 1):  
+        if string[i-1] != '0':  
+            dp[i] += dp[i-1]  
+        if string[i-2] == '1' or (string[i-2] == '2' and string[i-1] in '0123456'):  
+            dp[i] += dp[i-2]  
+      
+    return dp[length]  
+  
+string = '101'  
+print(decodeWays(string))
 
-# Algorithm 2 - Bottom up Dynamic Programming Approach  
+# Algorithm 3 - Bottom up Dynamic Programming Approach using only two variable 
 def decodeWays(string):  
     if not string or string[0] == '0':  
         return 0  
