@@ -1,4 +1,4 @@
-# Dynamic Programming Algorithm 
+# Dynamic Programming Algorithm to find LCS of two strings
 def lcs(text1, text2):
     dp = [[0 for j in range(len(text2)+1)] for i in range(len(text1)+1)]
     res_text = ''
