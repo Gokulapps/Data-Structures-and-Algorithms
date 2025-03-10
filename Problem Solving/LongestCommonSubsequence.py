@@ -15,4 +15,4 @@ def lcs(text1, text2):
 text1 = "abcdefgh"
 text2 = "adg"
 result, seq = lcs(text1, text2)
-print('The Length of the Longest Common String Length is:', result, 'and the LCS is:', seq)
+print('The Length of the Longest Common Subsequence is:', result, 'and the LCS is:', seq)
