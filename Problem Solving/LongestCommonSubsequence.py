@@ -9,6 +9,19 @@ def lcs(text1, text2):
                 res_text = text1[i] + res_text
             else:
                 dp[i][j] = max(dp[i+1][j], dp[i][j+1])
+
+    # Start backtracking from dp[0][0]  
+    i, j = 0, 0  
+    res_text = ""  
+    while i < len(text1) and j < len(text2):  
+        if text1[i] == text2[j]:  
+            res_text += text1[i]  
+            i += 1  
+            j += 1  
+        elif dp[i+1][j] > dp[i][j+1]:  
+            i += 1  
+        else:  
+            j += 1 
     
     return dp[0][0], res_text
 
