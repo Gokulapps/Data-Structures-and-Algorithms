@@ -64,17 +64,17 @@ totalWays = coinComb(amount, denominations)
 print(f'There are {totalWays} ways to sum up to {amount} using the given denominations')
 
 # Algorithm 4 - Dynamic Programming Solution with improved space complexity 
-def coinComb(target_amount, denominations):  
-    dp = [0 if i!= 0 else 1 for i in range(target_amount+1)]
-    for c in range(len(denominations)):  
-        new_dp = [0 if i!= 0 else 1 for i in range(target_amount+1)]
-        for a in range(1, target_amount + 1):  
-            new_dp[a] += dp[a]  
-            if a - denominations[c] >= 0:  
-                new_dp[a] += new_dp[a - denominations[c]]
-        dp = new_dp 
-      
-    return dp[target_amount]  
+def coinComb(target, denominations):
+    dp = [0 if i!=0 else 1 for i in range(target+1)] 
+    for i in range(len(denominations)):
+        temp_dp = [0 if i!=0 else 1 for i in range(target+1)] 
+        for amount in range(1, target+1):
+            temp_dp[amount] = dp[amount]
+            if amount - denominations[i] >= 0:
+                temp_dp[amount] += temp_dp[amount - denominations[i]]
+        dp = temp_dp
+        
+    return dp[target]  
   
 amount = 50  
 denominations = [1, 3, 5, 10, 50]
