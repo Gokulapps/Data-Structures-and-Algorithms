@@ -38,6 +38,6 @@ def LongestIncreasingPath(matrix):
 matrix = [[2, 9, 7], 
           [1, 3, 6], 
           [5, 8, 4]]
-longest_length, path = LongestIncreasingPath()
+longest_length, path = LongestIncreasingPath(matrix)
 print('The Length of the Longest Increasing Path in the Given Input is: ', longest_length)
 print('And the Longest Path is: ', path)
