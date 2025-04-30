@@ -76,7 +76,35 @@ combinations = min_comb(amount, denomination)
 print("Minimum number of coins:", len(combinations[0]) if combinations else 0)  
 print("Combinations with minimum coins:", combinations[0])   
 
-# Algorithm 3(Efficient Solution) - Solving it using Dynamic Programming 
+# Algorithm 3(Efficient Solution) - Solving it using Dynamic Programming (Memoization)
+import time
+def min_comb(amount, denomination, memo={}):  
+    if memo.get(amount, False):
+        return memo[amount]
+    if amount == 0:
+        return []
+    if amount < 0: 
+        return None
+    totalCoins = []
+    for coin in denomination:
+        combination = min_comb(amount-coin, denomination, memo)
+        if combination != None and (totalCoins == [] or len(totalCoins) > len(combination)):
+            totalCoins = combination+[coin]
+    memo[amount] = totalCoins
+    return totalCoins
+        
+  
+# Example usage:  
+amount = 172 
+denomination = [1, 2, 5, 10]  
+start_time = time.process_time()
+combinations = min_comb(amount, denomination)  
+print("Minimum number of coins:", len(combinations) if combinations else 0)  
+print("Combinations with minimum coins:", combinations) 
+end_time = time.process_time()
+print(f"CPU Time use: {end_time-start_time} Seconds")
+
+# Algorithm 3(Efficient Solution) - Solving it using Dynamic Programming (Tabulation)
 def coinChange(amount, denomination):
     dp = [float('inf')] * (amount+1) # dp[i] will hold the minimum coins for amount i  
     coin_used = [-1] * (amount+1) # coin_used[i] will hold the coin that was last used to get to amount i
@@ -106,4 +134,28 @@ amount = 167
 denomination = [1, 2, 5, 10, 20, 50, 100, 500]   
 min_coins, combination = coinChange(amount, denomination)  
 print(f"Minimum number of coins required: {min_coins}")  
-print(f"Combination of coins used: {combination}")   
+print(f"Combination of coins used: {combination}")  
+
+# Algorithm 5 (Efficient Solution) - Solving it using Dynamic Programming (Tabulation) 
+import time
+def min_comb(amount, denomination, memo={}):  
+    tabulation = [None] * (amount+1)
+    tabulation[0] = []
+    for i in range(amount+1):
+        if tabulation: 
+            for coin in denomination: 
+                if i+coin <= amount and (tabulation[i+coin] == None or len(tabulation[i+coin]) > len(tabulation[i]+[coin])):
+                    tabulation[i+coin] = tabulation[i]+[coin]
+                    
+    return tabulation[amount]
+        
+  
+# Example usage:  
+amount = 177
+denomination = [1, 2, 5, 10]  
+start_time = time.process_time()
+combinations = min_comb(amount, denomination)  
+print("Minimum number of coins:", len(combinations) if combinations else 0)  
+print("Combinations with minimum coins:", combinations) 
+end_time = time.process_time()
+print(f"CPU Time use: {end_time-start_time} Seconds")
